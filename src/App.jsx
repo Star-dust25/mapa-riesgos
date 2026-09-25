@@ -364,7 +364,14 @@ export default function App() {
               <button className="btn btn-danger" onClick={deleteRisk}>Eliminar</button>
               <div style={{flex: 1}}></div>
               <button className="btn btn-outline" onClick={() => setIsViewModalOpen(false)}>Cerrar</button>
-              <button className="btn btn-primary" onClick={mitigateRisk}>Aplicar Mitigación</button>
+              { (activeRisk.status || 'active') === 'active' ? (
+                <>
+                  <button className="btn btn-outline" onClick={toggleArchiveRisk}>Archivar</button>
+                  <button className="btn btn-primary" onClick={mitigateRisk}>Aplicar Mitigación</button>
+                </>
+              ) : (
+                <button className="btn btn-primary" onClick={toggleArchiveRisk}>Reabrir Riesgo</button>
+              )}
             </div>
           </div>
         </div>
