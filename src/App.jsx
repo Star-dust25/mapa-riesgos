@@ -361,9 +361,7 @@ export default function App() {
             </div>
             
             <div className="modal-actions">
-              <button className="btn btn-danger" onClick={deleteRisk}>Eliminar</button>
-              <div style={{flex: 1}}></div>
-              <button className="btn btn-outline" onClick={() => setIsViewModalOpen(false)}>Cerrar</button>
+              <button className="btn btn-danger mr-auto" onClick={deleteRisk}>Eliminar</button>
               { (activeRisk.status || 'active') === 'active' ? (
                 <>
                   <button className="btn btn-outline" onClick={toggleArchiveRisk}>Archivar</button>
